@@ -1,0 +1,54 @@
+﻿<mah:MetroWindow x:Class="RapidInvoice.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        TitleCharacterCasing="Normal" WindowStartupLocation="CenterScreen"
+        Title="RapidInvoice" Height="350" Width="525" TitleAlignment="Center"
+        xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls"
+        xmlns:IconsPack="http://metro.mahapps.com/winfx/xaml/iconpacks"
+        >
+    <mah:MetroWindow.LeftWindowCommands>
+        <mah:WindowCommands>
+            <IconsPack:PackIconFontAwesome Height="25" Width="Auto" Kind="FileInvoiceDollarSolid" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        </mah:WindowCommands>
+    </mah:MetroWindow.LeftWindowCommands>
+    <Grid Background="#FFEEE8F9">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="35"/>
+        </Grid.RowDefinitions>
+        <Grid x:Name="TileGrid" Grid.Row="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <!--Adding Tiles-->
+            <mah:Tile x:Name="Tile_Invoice" TiltFactor="5" Title="Facturation Rapide" Height="Auto" Width="Auto" Background="#FF2DC995" HorizontalContentAlignment="Left" Click="Tile_Invoice_Click">
+                <IconsPack:PackIconFontAwesome Kind="FileInvoiceSolid" Height="70" Width="80"/>
+            </mah:Tile>
+            <mah:Tile x:Name="Tile_Consult_invoices" Title="Consulter Factures Créées" Height="Auto" Width="Auto" Grid.Row="1" Background="#CC97A418" HorizontalContentAlignment="Left" Click="Tile_Consult_invoices_Click">
+                <IconsPack:PackIconFontAwesome Kind="FolderOpenSolid" Height="70" Width="80" Margin="15,0,0,0"/>
+            </mah:Tile>
+            <mah:Tile x:Name="Tile_Settings" Title="Paramètres" Height="Auto" Width="Auto" Grid.Column="1" Grid.RowSpan="2" Background="#CC11449E" Click="Tile_Settings_Click">
+                <IconsPack:PackIconFontAwesome Kind="ToolsSolid"  Height="120" Width="110" HorizontalAlignment="Left"/>
+            </mah:Tile>
+
+        </Grid>
+        <Button x:Name="Btn_Exit" Grid.Row="1" Width="80" HorizontalAlignment="Right" VerticalAlignment="Bottom" Click="Btn_Exit_Click" ToolTip="{DynamicResource CoolToolTip}" Margin="0,0,0,1">
+            <Button.Resources>
+                <ToolTip x:Key="CoolToolTip" Background="Black">
+                    <TextBlock Text="Quitter" Foreground="Red" TextAlignment="Justify" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                </ToolTip>
+            </Button.Resources>
+            <IconsPack:PackIconFontAwesome Kind="SignOutAltSolid" Margin="10,0,0,0"/>
+        </Button>
+
+        <Label Grid.Row="1" VerticalAlignment="Bottom" Foreground="Blue" Margin="2,0,85,2">
+            <Hyperlink x:Name="CreatorLink" NavigateUri="http://www.facebook.com/Avery.Mkv3" RequestNavigate="CreatorLink_RequestNavigate">By Medeou Orden Copyrights @2020</Hyperlink>
+        </Label>
+    </Grid>
+</mah:MetroWindow>

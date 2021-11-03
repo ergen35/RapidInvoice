@@ -1,0 +1,11 @@
+﻿<mah:MetroWindow x:Class="RapidInvoice.ListeFactures"
+                      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                      xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls"
+                      Title="ListeFactures"
+                      Height="350"
+                      Width="525">
+    <Grid>
+        <ListBox/>
+    </Grid>
+</mah:MetroWindow>

@@ -1,0 +1,11 @@
+﻿<mah:MetroWindow x:Class="RapidInvoice.Parametres"
+                      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                      xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls"
+                      Title="Parametres"
+                      Height="350"
+                      Width="525">
+    <Grid>
+
+    </Grid>
+</mah:MetroWindow>
