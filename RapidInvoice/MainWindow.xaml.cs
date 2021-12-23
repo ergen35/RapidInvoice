@@ -12,53 +12,57 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-
-using MahApps.Metro.Controls;
+using Window = MahApps.Metro.Controls.MetroWindow;
+using GalaSoft.MvvmLight.Command;
 
 namespace RapidInvoice
 {
     /// <summary>
-    /// Logique d'interaction pour MainWindow.xaml
+    /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : MetroWindow
+    public partial class MainWindow : Window
     {
+        public ICommand ExitCommand => new RelayCommand(ExitApp);
+        public ICommand OpenSettingsCommand => new RelayCommand(OpenSettings);
+        public ICommand AboutCommand => new RelayCommand(ShowAboutDialog);
+        public ICommand ViewInvoicesCommand => new RelayCommand(ViewInvoices);
+        public ICommand NewInvoiceCommand => new RelayCommand(NewInvoice);
+
+
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+
+        private void NewInvoice()
+        {
+
+        }
+
+        private void ViewInvoices()
+        {
             
-
         }
 
-        private void Btn_Exit_Click(object sender, RoutedEventArgs e)
+        private void ShowAboutDialog() 
         {
-            this.Close();
+            
         }
 
-        private void Tile_Invoice_Click(object sender, RoutedEventArgs e)
+        private void OpenSettings()
         {
-            Facturation FW = new Facturation();
-            FW.ShowDialog();
+            var pm = new Parametres();
+            pm.ShowDialog();
         }
-
-        private void Tile_Settings_Click(object sender, RoutedEventArgs e)
-        {
-            Parametres PM = new Parametres();
-            PM.ShowDialog();
-        }
-
-        private void Tile_Consult_invoices_Click(object sender, RoutedEventArgs e)
-        {
-            ListeFactures LF = new ListeFactures();
-            LF.ShowDialog();
-        }
-
         private void CreatorLink_RequestNavigate(object sender, RequestNavigateEventArgs e)
         {
             System.Diagnostics.Process.Start(e.Uri.AbsoluteUri);
             e.Handled = true;
         }
-
-
-
+        private void ExitApp()
+        {
+            Close();
+        }
     }
 }
